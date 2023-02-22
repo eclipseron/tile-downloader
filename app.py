@@ -19,7 +19,7 @@ def tile_downloader(tiles):
         print('creating directory')
     for tile in tiles:
         imgUrl = 'https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}'.format(x=tile[0], y=tile[1], z=tile[2])
-        filename = '{z}_{x}_{y}.png'.format(x=tile[0], y=tile[1], z=tile[2])
+        filename = '{x}_{y}_{z}.png'.format(x=tile[0], y=tile[1], z=tile[2])
         file_path = path.join(IMG_PATH, filename)
         
         if not path.exists(file_path):
@@ -27,5 +27,5 @@ def tile_downloader(tiles):
         else:
             print('file is already exists')
 
-tiles = [[0,0,0], [0,0,1], [1,0,1], [1,1,1], [0,1,1]]
+tiles = [[211341,136744,18], [211341,136745,18], [211340,136744,18], [211341,136743,18], [211339,136744,18]] #specify tiles [x, y, z]
 tile_downloader(tiles)
